@@ -1,9 +1,6 @@
 <?php
 
-include('Character.php');
-include('MoveAction.php');
-
-class Ghost extends Character implements MoveAction
+class Ghost extends Character
 {
   public function move(): void
   {

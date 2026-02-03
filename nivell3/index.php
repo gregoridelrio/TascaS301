@@ -1,17 +1,21 @@
 <?php
+include_once('classes/Character.php');
+include_once('classes/Ghost.php');
+include_once('classes/Warrior.php');
 
-include('classes/Ghost.php');
-
-function doCombat(Character $character)
+function doCombat(AttackAction $character)
 {
-  if ($character instanceof MoveAction) {
-    $character->move();
-  }
+  $character->attack();
+}
 
-  if ($character instanceof AttackAction) {
-    $character->attack();
-  }
+function doMove(Character $character)
+{
+  $character->move();
 }
 
 $enemy = new Ghost();
-doCombat($enemy);
+$warrior = new Warrior();
+
+doMove($enemy);
+doMove($warrior);
+doCombat($warrior);
