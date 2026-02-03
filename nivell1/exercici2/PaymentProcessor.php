@@ -2,7 +2,7 @@
 
 class PaymentProcessor
 {
-  protected $gateway;
+  protected Payment $gateway;
 
   public function __construct(Payment $gateway)
   {
